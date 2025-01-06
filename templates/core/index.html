@@ -6,6 +6,13 @@
     <div class="m-5">
 
         <h1>Index</h1>
+
+        {% for p in posts %}
+        <div class="alert alert-info" role="alert">
+            <strong>{{p.user}}</strong> 
+            {{p.text}}
+        </div>
+        {% endfor %}
     </div>
 {% endblock content %}
     
