@@ -2,22 +2,24 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand text-light" href="#!">Index</a>
+    <a class="navbar-brand text-light" href="{% url 'index' %}">Index</a>
   
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav mr-auto mt-2 mt-md-0">
         <li class="nav-item active">
           <a class="nav-link text-light" href="#!">Creat</span></a>
         </li>
+        {% if user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link text-light" href="#!">Register</a>
+          <a class="nav-link text-light" href="{% url 'logout' %}">Logout</a>
+          </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link text-light" href="{% url 'register' %}">Register</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link text-light" href="#!">Login</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link text-light" href="#!">Logout</a>
-        </li>
+        <a class="nav-link text-light" href="{% url 'login' %}">Login</a>
+        {% endif %}
         
 
 
