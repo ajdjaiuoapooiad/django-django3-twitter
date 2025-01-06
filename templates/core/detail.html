@@ -5,14 +5,17 @@
     
     <div class="m-5">
 
-        <h1>Index</h1>
+        <h1>Detail</h1>
 
-        {% for p in posts %}
         <div class="alert alert-info" role="alert">
             <strong>{{p.user}}</strong> 
-            <a href="{% url 'detail' p.id %}">{{p.text}}</a>
+            {{p.text}}
         </div>
-        {% endfor %}
+
+        <a href="">いいね</a>
+        <a href="">View</a>
+        <a href="">編集</a>
+        <a href="">削除</a>
+
     </div>
 {% endblock content %}
-    
